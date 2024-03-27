@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises'
 import express from 'express'
+import { telefunc } from 'telefunc'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -16,6 +17,14 @@ const ssrManifest = isProduction
 
 // Create http server
 const app = express()
+
+// Init telefunc
+app.use(express.text())
+app.all('/_telefunc', async (req, res) => {
+  const { originalUrl: url, method, body } = req
+  const httpResponse = await telefunc({ url, method, body })
+  res.status(httpResponse.statusCode).type(httpResponse.contentType).send(httpResponse.body)
+})
 
 // Add Vite or respective production middlewares
 let vite

@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { computedAsync } from '@vueuse/core'
+import { userInfo } from '../bff/userInfo.telefunc'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
+const count = ref(1)
+
+const user = computedAsync(async () => userInfo({ userId: count.value }), { message: 'Loading...' })
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
+
+  <div>
+    {{ user.message }}
+  </div>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
