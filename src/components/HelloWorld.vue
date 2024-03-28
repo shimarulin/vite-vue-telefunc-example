@@ -13,7 +13,7 @@ const user = computedAsync(async () => userInfo({ userId: count.value }), { mess
 <template>
   <h1>{{ msg }}</h1>
 
-  <div>
+  <div class="user-message">
     {{ user.message }}
   </div>
 
@@ -42,5 +42,14 @@ const user = computedAsync(async () => userInfo({ userId: count.value }), { mess
 <style scoped>
 .read-the-docs {
   color: #888;
+}
+
+.user-message {
+  padding: 24px;
+  background-color: #0f3d70;
+  color: #ec9e5d;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 12px;
 }
 </style>

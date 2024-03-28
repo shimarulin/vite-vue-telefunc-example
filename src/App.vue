@@ -12,8 +12,14 @@ import HelloWorld from './components/HelloWorld.vue'
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
+    <a href="https://telefunc.com/" target="_blank">
+      <img src="./assets/telefunc.svg" class="logo telefunc" alt="Telefunc logo" />
+    </a>
+    <a href="https://vueuse.org/" target="_blank">
+      <img src="./assets/vueuse.svg" class="logo vueuse" alt="VueUse logo" />
+    </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue + Telefunc + VueUse" />
 </template>
 
 <style scoped>
@@ -26,6 +32,12 @@ import HelloWorld from './components/HelloWorld.vue'
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+.logo.telefunc:hover {
+  filter: drop-shadow(0 0 2em #c9ac2eaa);
+}
+.logo.vueuse:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
