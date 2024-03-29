@@ -2,7 +2,10 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { telefunc } from 'telefunc/vite'
 
-const port = 3000
+/**
+ * To setup server port see
+ * ./server.js:7
+ */
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -29,6 +32,4 @@ export default defineConfig({
     }
   ],
   build: { target: 'esnext' },
-  server: { port, host: true },
-  preview: { port },
 })
