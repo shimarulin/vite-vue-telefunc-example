@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
-    "build": "npm run build:client && npm run build:server",
+    "build": "pnpm run build:client && pnpm run build:server",
     "build:client": "vite build --ssrManifest",
     "build:server": "vite build --ssr",
     "preview": "cross-env NODE_ENV=production node server"
