@@ -12,6 +12,21 @@ export default defineConfig({
       disableNamingConvention: true,
     }),
     vue(),
+    {
+      name: 'server:entry',
+      config(_, env) {
+        if (!env.isSsrBuild) return
+        return {
+          build: {
+            rollupOptions: {
+              input: {
+                'entry-server': './src/entry-server.ts'
+              }
+            }
+          }
+        }
+      }
+    }
   ],
   build: { target: 'esnext' },
   server: { port, host: true },
